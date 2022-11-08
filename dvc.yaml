@@ -1,0 +1,8 @@
+stages:
+  prepare:
+    cmd: python3 process/prepare.py input/onspd.csv
+    deps:
+    - input/onspd.csv
+    - process/prepare.py
+    outs:
+    - working
