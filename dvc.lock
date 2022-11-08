@@ -1,0 +1,16 @@
+schema: '2.0'
+stages:
+  prepare:
+    cmd: python3 process/prepare.py input/onspd.csv
+    deps:
+    - path: input/onspd.csv
+      md5: a306a5f9f97f4437f68811becbecad7a
+      size: 1440948946
+    - path: process/prepare.py
+      md5: cb6e0649ccdce277f69fda04fbbf6500
+      size: 120
+    outs:
+    - path: working
+      md5: 90f4c47934119ef82675732aa3f8cae5.dir
+      size: 51875274
+      nfiles: 1
