@@ -1,22 +1,20 @@
 import os
+import sys
 import pandas as pd
 import logging
 
 logger = logging.getLogger(__name__)
 
-os.makedirs('working', exist_ok=True)
-os.makedirs('data', exist_ok=True)
+from config import PARQUET_FILE
 
-PARQUET_FILE = os.path.join('working', 'postcodes.parquet')
-CENTROIDS_CSV = os.path.join('data', 'reference', 'postcodes.csv')
-
-
-def create_centroid_file(onspd_csv):
+if __name__ == '__main__':
     '''
     Get the latest ONS Postcode Database from the ONS.
 
     https://www.ons.gov.uk/methodology/geography/geographicalproducts/postcodeproducts
     '''
+    onspd_csv = sys.argv[1]
+
     if not os.path.exists(onspd_csv):
         logger.error('Cannot find source CSV')
         raise "Can't find source CSV {0}. Have you downloaded it?".format(
@@ -34,26 +32,6 @@ def create_centroid_file(onspd_csv):
     columns = 'pcds lat long pcon oslaua osward lsoa11 msoa11'.split()
     logger.info('Processing CSV to Parquet')
     centroids = pd.read_csv(onspd_csv, usecols=columns)
-    centroids.to_parquet(PARQUET_FILE)
-
-
-def get_centroids():
-    logger.info('Reading existing Parquet file')
-    centroids = pd.read_parquet(PARQUET_FILE)
-
-    return centroids
-
-
-def create_geographic_files():
-    # Round numeric values to 5 decimal places
     centroids = centroids.round({'lat': 5, 'long': 5})
-    centroids = gpd.GeoDataFrame(
-        centroids, geometry=gpd.points_from_xy(
-            centroids.long, centroids.lat)
-    )
-
-
-def save_ref_csv(centroids):
-    centroids[['pcds', 'oslaua', 'osward']].to_csv(
-        CENTROIDS_CSV, index=False)
+    centroids.to_parquet(PARQUET_FILE)
 
