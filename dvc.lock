@@ -18,20 +18,18 @@ stages:
       size: 45056667
       nfiles: 1
   build:
-    cmd: python3 postcode/build.py
+    cmd: python3 postcode/build.py output/onspd-extract.csv
     deps:
     - path: postcode/build.py
-      md5: 9e76b9a6388a971b133d13a581284c19
-      size: 613
+      md5: b03170927713d2606fa987b8156eb04a
+      size: 649
     - path: postcode/config.py
       md5: 2755dab743c4491aa752f1bf9afba494
       size: 321
-    - path: working/
-      md5: ec7c65a55010d59c794cad5d1c551f38.dir
+    - path: working/postcodes.parquet
+      md5: fbf7176a27120ba8c8fb78bbe4596b7b
       size: 45056667
-      nfiles: 1
     outs:
-    - path: output/
-      md5: b680e3e5151516e038e4078d05ce1955.dir
+    - path: output/onspd-extract.csv
+      md5: b527f4a308cb738f244a53c8a164d88c
       size: 129321340
-      nfiles: 1

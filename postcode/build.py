@@ -1,7 +1,8 @@
+import sys
 import pandas as pd
 import geopandas as gpd
 import logging
-from config import PARQUET_FILE, CENTROIDS_JSON, CENTROIDS_CSV
+from config import PARQUET_FILE, CENTROIDS_JSON
 
 logger = logging.getLogger(__name__)
 
@@ -16,8 +17,9 @@ def save_as_geojson(data):
 
 
 if __name__ == '__main__':
+    onspd_extract_csv = sys.argv[1]
     logger.info('Reading existing Parquet file')
     centroids = pd.read_parquet(PARQUET_FILE)
 
     centroids[properties].to_csv(
-        CENTROIDS_CSV, index=False)
+        onspd_extract_csv, index=False)

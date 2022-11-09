@@ -8,10 +8,10 @@ stages:
     outs:
     - working/
   build:
-    cmd: python3 postcode/build.py
+    cmd: python3 postcode/build.py output/onspd-extract.csv
     deps:
     - postcode/build.py
     - postcode/config.py
-    - working/
+    - working/postcodes.parquet
     outs:
-    - output/
+    - output/onspd-extract.csv
