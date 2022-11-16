@@ -61,7 +61,7 @@ upstream source. This includes populating fresh clones of the git repo with
 reference data.
 
 To see the state of any files you might have imported, run the
-[`dvc status`](https://dvc.org/doc/command-reference/status) command.
+[`dvc data status`](https://dvc.org/doc/command-reference/data/status) command.
 
 If any files are missing or changed, the files can be provisioned by running
 [`dvc pull`](https://dvc.org/doc/command-reference/pull).
