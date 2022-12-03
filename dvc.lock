@@ -1,11 +1,11 @@
 schema: '2.0'
 stages:
   prepare:
-    cmd: python3 postcode/prepare.py input/onspd.csv
+    cmd: python3 postcode/prepare.py input/onspd.csv.gz
     deps:
-    - path: input/onspd.csv
-      md5: c4e5b372d37652d4c92aa8f4998eaea9
-      size: 1442942515
+    - path: input/onspd.csv.gz
+      md5: 2ba7690c503702e6de9748907519c3f3
+      size: 81564898
     - path: postcode/config.py
       md5: 2755dab743c4491aa752f1bf9afba494
       size: 321
@@ -14,8 +14,8 @@ stages:
       size: 1359
     outs:
     - path: working/
-      md5: ec7c65a55010d59c794cad5d1c551f38.dir
-      size: 45056667
+      md5: bbcab57f402a746215b66f4827253520.dir
+      size: 45048102
       nfiles: 1
   build:
     cmd: python3 postcode/build.py output/onspd-extract.csv

@@ -1,8 +1,8 @@
 stages:
   prepare:
-    cmd: python3 postcode/prepare.py input/onspd.csv
+    cmd: python3 postcode/prepare.py input/onspd.csv.gz
     deps:
-    - input/onspd.csv
+    - input/onspd.csv.gz
     - postcode/config.py
     - postcode/prepare.py
     outs:
