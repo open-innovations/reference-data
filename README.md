@@ -79,7 +79,8 @@ dvc update --rev main --recursive .
 ### ONS Postcode Directory
 
 This data is extracted from the
-[most recent ONS Postcode Directory](https://geoportal.statistics.gov.uk/search?collection=Dataset&sort=-created&tags=all(PRD_ONSPD)).
+[most recent ONS Postcode
+Directory](https://geoportal.statistics.gov.uk/search?collection=Dataset&sort=-created&tags=all(PRD_ONSPD)).
 
 The following fields are extrated, per the original ONSPD spec. This is
 extracted from the user guide contained in the ONSPD zip file.
@@ -99,4 +100,10 @@ extracted from the user guide contained in the ONSPD zip file.
   The 2011 Census LSOA (England and Wales), SOA (Northern Ireland) and DZ (Scotland) code. Pseudo codes are included for Channel Islands and Isle of Man. The field will otherwise be blank for postcodes with no grid reference. N.B. NI SOAs remain unchanged from 2001.
 * `msoa11`  
   _2011 Census Middle Layer Super Output Area (MSOA) / Intermediate Zone (IZ)_  
-  The 2011 Census MSOA code for England and Wales and IZ zone for Scotland. Pseudo codes are included for Northern Ireland, Channel Islands and Isle of Man. The field will otherwise be blank for postcodes with no grid reference.
+  The 2011 Census MSOA code for England and Wales and IZ zone for Scotland.
+  Pseudo codes are included for Northern Ireland, Channel Islands and Isle of
+  Man. The field will otherwise be blank for postcodes with no grid reference.
+  
+Other links:
+
+* https://geoportal.statistics.gov.uk/
