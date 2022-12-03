@@ -27,9 +27,9 @@ stages:
       md5: 2755dab743c4491aa752f1bf9afba494
       size: 321
     - path: working/postcodes.parquet
-      md5: fbf7176a27120ba8c8fb78bbe4596b7b
-      size: 45056667
+      md5: 8fba17e1ab34eb2259ce8e3d6fce6145
+      size: 45048102
     outs:
     - path: output/onspd-extract.csv
-      md5: b527f4a308cb738f244a53c8a164d88c
-      size: 129321340
+      md5: c33cab07a62f2d02607a9d155bd968f4
+      size: 129496640
